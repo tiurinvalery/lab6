@@ -1,0 +1,28 @@
+ language: java
+jdk:
+  - openjdk8
+  - oraclejdk8
+
+before_install:
+ - chmod +x gradlew
+
+install: ./gradlew setupCIWorkspace -S
+script: ./gradlew build -S
+
+env:
+ global:
+   - secure: "XXX"
+
+addons:
+  coverity_scan:
+    project:
+      name: "lab6SQL.project"
+    notification_email: tiurinvalery@gmail.com
+    build_command_prepend: "./gradlew setupCIWorkspace -S"
+    build_command: "./gradlew build -S"
+    branch_pattern: coverity_scan
+
+branches:
+  only:
+    - master
+    - coverity-scan
