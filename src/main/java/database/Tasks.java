@@ -65,7 +65,7 @@ public class Tasks {
         session.delete(session);
     }
     public static void dellCountry(Integer id,String name, Session session) {
-        Country nC = new Country(id);
+        Country nC = new Country(id,name);
 
         session.delete(nC);
     }

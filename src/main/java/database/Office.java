@@ -14,6 +14,11 @@ public class Office {
     public Office() {
 
     }
+    public Office(Integer oId, Country c, Set<Directory> dirIno) {
+        this.officeId = oId;
+        this.country = c;
+        this.dirInOffice = dirIno;
+    }
 
     @Id
     @PrimaryKeyJoinColumn
@@ -49,5 +54,16 @@ public class Office {
         this.dirInOffice = dio;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Office office = (Office) o;
+
+        if (officeId != null ? !officeId.equals(office.officeId) : office.officeId != null) return false;
+        if (country != null ? !country.equals(office.country) : office.country != null) return false;
+        return dirInOffice != null ? dirInOffice.equals(office.dirInOffice) : office.dirInOffice == null;
+    }
 
 }

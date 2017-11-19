@@ -20,12 +20,13 @@ public class Worker {
     public Worker() {
 
     }
-    public Worker(Company c,Directory d,Integer age,String wName, String wPosition) {
+    public Worker(Integer id,Company c,Directory d,Integer age,String wName, String wPosition) {
         this.company = c;
         this.directory =d;
         this.workerAge=age;
         this.workerName = wName;
         this.workerPosition=wPosition;
+        this.workerId = id;
     }
 
     @Id
@@ -79,6 +80,21 @@ public class Worker {
     }
     public void setWorkerPosition(String wPosition) {
         this.workerPosition = wPosition;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Worker worker = (Worker) o;
+
+        if (workerId != null ? !workerId.equals(worker.workerId) : worker.workerId != null) return false;
+        if (company != null ? !company.equals(worker.company) : worker.company != null) return false;
+        if (directory != null ? !directory.equals(worker.directory) : worker.directory != null) return false;
+        if (workerAge != null ? !workerAge.equals(worker.workerAge) : worker.workerAge != null) return false;
+        if (workerName != null ? !workerName.equals(worker.workerName) : worker.workerName != null) return false;
+        return workerPosition != null ? workerPosition.equals(worker.workerPosition) : worker.workerPosition == null;
     }
 
 }

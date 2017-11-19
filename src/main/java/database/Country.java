@@ -17,8 +17,9 @@ public class Country {
     public Country() {
 
     }
-    public Country(Integer id){
+    public Country(Integer id,String cName){
         this.countryId = id;
+        this.countryName = cName;
     }
     public Country(String cName) {
         this.countryName = cName;
@@ -49,8 +50,17 @@ public class Country {
         this.officesInCountry = of;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        Country country = (Country) o;
 
+        if (countryId != null ? !countryId.equals(country.countryId) : country.countryId != null) return false;
+        if (countryName != null ? !countryName.equals(country.countryName) : country.countryName != null) return false;
+        return officesInCountry != null ? officesInCountry.equals(country.officesInCountry) : country.officesInCountry == null;
+    }
 
 
 }

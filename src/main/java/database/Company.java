@@ -1,15 +1,10 @@
 package database;
 
-import com.sun.deploy.security.ValidationState;
-import database.Directory;
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-
-import java.util.*;
 import javax.persistence.*;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import utill.HibernateUtil;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -40,12 +35,7 @@ public class Company implements java.io.Serializable {
         this.companyName = cName;
         this.typeOfCompany = tof;
     }
-    public Company(TypeOfCompany tof, String cName, Set<Directory> ds, Set<Worker> ws) {
-        this.typeOfCompany = tof;
-        this.companyName=cName;
-        this.dirSet =ds;
-        this.workerSet = ws;
-    }
+
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
@@ -92,7 +82,16 @@ public class Company implements java.io.Serializable {
         this.workerSet = ws;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        Company company = (Company) o;
 
+        if (companyId != company.companyId) return false;
+        if (typeOfCompany != company.typeOfCompany) return false;
+        return companyName != null ? companyName.equals(company.companyName) : company.companyName == null;
+    }
 
 }

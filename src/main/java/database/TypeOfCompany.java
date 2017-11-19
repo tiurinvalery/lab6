@@ -52,5 +52,17 @@ public class TypeOfCompany implements java.io.Serializable {
         this.compSet = cp;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        TypeOfCompany that = (TypeOfCompany) o;
+
+        if (typeOfCompanyId != null ? !typeOfCompanyId.equals(that.typeOfCompanyId) : that.typeOfCompanyId != null)
+            return false;
+        if (type != null ? !type.equals(that.type) : that.type != null) return false;
+        return compSet != null ? compSet.equals(that.compSet) : that.compSet == null;
+    }
 
 }
