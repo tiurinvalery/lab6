@@ -1,17 +1,7 @@
 package utill;
-
-import java.io.File;
-import java.sql.Statement;
-
-import com.fasterxml.classmate.AnnotationConfiguration;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.*;
-import org.hibernate.hql.internal.antlr.SqlStatementParser;
-
-import javax.imageio.spi.ServiceRegistry;
-
 
 public class HibernateUtil {
     private static SessionFactory sessionFactory;

@@ -1,10 +1,4 @@
 package database;
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import utill.HibernateUtil;
-
-import java.lang.reflect.Type;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.*;

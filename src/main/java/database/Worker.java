@@ -1,9 +1,4 @@
 package database;
-
-import database.Directory;
-
-import java.util.HashSet;
-import java.util.Set;
 import javax.persistence.*;
 
 import static javax.persistence.GenerationType.IDENTITY;
