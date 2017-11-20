@@ -2,7 +2,7 @@ import database.Country;
 import database.Tasks;
 import org.junit.Test;
 import static org.junit.Assert.assertTrue;
-public class delAllTaskTest {
+public class DelAllTaskTest {
     @Test
     public void delAllTest(){
         Country c1 = new Country();
@@ -11,8 +11,7 @@ public class delAllTaskTest {
         c2.setCountryName("Belarussia");
         Country.addToCountryList(c1);
         Country.addToCountryList(c2);
-        Tasks.save(c1);
-        Tasks.save(c2);
+        Tasks.create(Country.countryList);
         Tasks.delAll(Country.countryList);
         assertTrue(Country.countryList.isEmpty());
     }
