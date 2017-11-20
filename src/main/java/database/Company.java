@@ -31,9 +31,12 @@ public class Company implements java.io.Serializable {
     public Company(Integer id) {
        this.companyId = id;
     }
-    public Company(String cName, TypeOfCompany tof) {
+    public Company(Integer id,String cName, TypeOfCompany tof,Set<Worker> ws,Set<Directory> ds) {
+        this.companyId = id;
         this.companyName = cName;
         this.typeOfCompany = tof;
+        this.workerSet = ws;
+        this.dirSet = ds;
     }
 
 

@@ -1,6 +1,8 @@
 package database;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.*;
 
@@ -12,7 +14,9 @@ public class Country {
     private Integer countryId;
     private String countryName;
     private Set<Office> officesInCountry = new HashSet<Office>(0);
+    public static List<Country> countryList = new ArrayList<>();
 
+    public static void addToCountryList(Country c) {countryList.add(c);}
 
     public Country() {
 

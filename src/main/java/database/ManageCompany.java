@@ -6,7 +6,7 @@ import org.hibernate.Transaction;
 import utill.HibernateUtil;
 
 public class ManageCompany {
-
+/*
     public Integer addCompany(String compN, Integer tof0){
         Session session = HibernateUtil.buildSessionAnnotationFactory().openSession();
 
@@ -25,7 +25,7 @@ public class ManageCompany {
             session.close();
         }
         return companyID;
-    }
+    } */
     public void updateCompany(Integer comId, String comN) {
         Session session = HibernateUtil.buildSessionAnnotationFactory().openSession();
         Transaction tx = null;
@@ -60,5 +60,6 @@ public class ManageCompany {
             session.close();
         }
     }
+
 }
 

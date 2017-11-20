@@ -6,19 +6,16 @@ import utill.HibernateUtil;
 public class Main {
     public static void main(String args[]){
 
-        TypeOfCompany toc = new TypeOfCompany();
-        toc.setType("Corparation");
-        Tasks.save(toc);
-        Company c1 = new Company();
-        c1.setCompanyName("Microsoft");
-        c1.setTypeOfCompany(toc);
-        toc.getCompSet().add(c1);
 
-        Tasks.save(c1);
-        ManageCompany mc = new ManageCompany();
-        mc.deleteCompany(1);
-
-
+        Country c1 = new Country();
+        c1.setCountryName("1");
+        c1.setOfficesInCountry(null);
+        Country c2 = new Country();
+        c2.setCountryName("2");
+        c2.setOfficesInCountry(null);
+        Country.addToCountryList(c1);
+        Country.addToCountryList(c2);
+        Tasks.create(Country.countryList);
         System.out.println("All is okey");
     }
 }
