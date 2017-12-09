@@ -29,14 +29,6 @@ public class Office {
     public void setOfficeId(Integer oId){
         officeId = oId;
     }
-   /* @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "companyId")
-    public Company getCompany() {
-        return company;
-    }
-    public void setCompany(Company c){
-        company = c;
-    } */
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="countryId")
     public Country getCountry() {
